@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <Title>Geek Of The Week</Title>
+    </head>
+    <body>
+        <form action="https://sheetdb.io/api/v1/vr3x5ez7odg98" method="post" id="sheetdb-form">
+            <h1>Student Registration Fotm</h1>
+            <label>First Name</label>
+            <input type="text" name="data[First_name]" value=""> <br>
+            <label>Last Name</label>
+            <input type="text" name="data[Last_name]" value="">
+      
+          <br>  <label>Email</label>
+            <input type="email" name="data[email]" placeholder="e.g someone@gmail.com">
+          <br>  <label>Mobile Number</label>
+            <input type="tel" name="data[mobile]" value=""
+            placeholder="e.g +99650641575">
+            <br>
+            <input type="submit" name="" value="Submit">
+            <br>
+          </form>
+          <script>
+            var form = document.getElementById('sheetdb-form');
+            form.addEventListener("submit", e => {
+            e.preventDefault();
+            fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+            }).then(
+              response => response.json()
+            ).then((html) => {
+            // you can put any JS code here
+            window.open('https://docs.github.com/en/pages/quickstart', '_blank');
+
+          });
+        });
+          </script>
+    </body>
+</html>
